@@ -35,5 +35,23 @@ git clone <repository-url>
 
 
 # Skills
-- [python-project](python-project/SKILL.md): A skill to create a Python project based on a given description.
+- [python-project](python-project/SKILL.md): A skill to create a Python project based on a given description. The generated project includes a `docs/project_description.pdf` file with an overview of the project name, description, structure, and getting-started instructions.
+
+## Example project structure
+
+Running the `python-project` skill produces a GitHub repository with the following layout:
+
+```
+<project-name>/
+├── docs/
+│   └── project_description.pdf   ← auto-generated PDF describing the project
+├── notebooks/
+├── src/
+├── .gitignore
+├── generate_docs.py
+├── requirements.txt
+└── README.md
+```
+
+The PDF is generated automatically during project setup using the [fpdf2](https://py-pdf.github.io/fpdf2/) library and committed together with the rest of the project files so that anyone who clones the GitHub repository immediately has the project documentation available.
 
